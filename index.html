@@ -16,22 +16,28 @@
             overflow-x: hidden;
         }
 
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(to right, #26c6da, #00acc1);
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
         .container {
             max-width: 800px;
-            margin: 50px auto;
+            margin: 30px auto;
             padding: 20px;
             background-color: #ffffff;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             transform: translateY(0);
             animation: slideIn 0.5s ease-out;
-        }
-
-        h1 {
-            text-align: center;
-            color: #00796b;
-            margin-bottom: 30px;
-            font-size: 2.5em;
         }
 
         .fact {
@@ -96,8 +102,10 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Interesting Facts About Earth</h1>
+    </header>
+    <div class="container">
         <div id="facts-list"></div>
         <div class="button-container">
             <button onclick="replaceFacts()">Replace Facts</button>
