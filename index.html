@@ -5,40 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facts About Earth</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #e0f7fa;
+            color: #004d40;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
+            animation: slideIn 0.5s ease-out;
         }
 
         h1 {
             text-align: center;
-            color: #333;
+            color: #00796b;
+            margin-bottom: 30px;
         }
 
         .fact {
             margin-bottom: 20px;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
+            padding: 15px;
+            border-left: 5px solid #00796b;
+            background-color: #e0f2f1;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .fact:hover {
+            transform: scale(1.02);
         }
 
         .fact h2 {
             margin: 0;
-            color: #007BFF;
+            color: #004d40;
         }
 
         .fact p {
             margin: 5px 0 0;
-            color: #555;
+            color: #004d40;
         }
 
         .button-container {
@@ -47,17 +62,30 @@
         }
 
         button {
-            padding: 10px 20px;
+            padding: 10px 30px;
             font-size: 16px;
-            color: #fff;
-            background-color: #007BFF;
+            color: #ffffff;
+            background-color: #00796b;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #004d40;
+            transform: translateY(-2px);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -126,7 +154,6 @@
         }
 
         function replaceFacts() {
-            // Replace the facts array with new facts or modify existing ones
             const newFacts = [
                 {
                     fact: "Continents",
@@ -170,12 +197,10 @@
                 }
             ];
 
-            // Update the facts array and display the new facts
             facts.splice(0, facts.length, ...newFacts);
             displayFacts();
         }
 
-        // Initial display of facts
         displayFacts();
     </script>
 </body>
